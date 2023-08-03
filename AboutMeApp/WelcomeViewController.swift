@@ -7,12 +7,16 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
 
+    @IBOutlet var welcomeLabel: UILabel!
+    
+    var welcomeLab: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let welcome = welcomeLab else { return }
+        welcomeLabel.text = "Welcome, " + welcome + "!"
     }
 
 }
